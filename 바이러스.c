@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #define MAX_ARRAY 100
 
-
 int main() {
 	
 	int size, conn;
@@ -27,13 +26,28 @@ int main() {
 		}
 	}
 	for (int i = 0;i < conn ;i++) {
-		for (int j = 0;j < conn*2;j + 2) {
+		for (int j = 0;j < conn*2;j += 2) {
 			if (arr1[i] == arr2[j]) {
 				arr1[++index1] = arr2[j + 1];
 			}
 		}
 	}
-	
+	int arraysize = 0;
+	for (int i = 0;i < MAX_ARRAY;i++) {
+		if (arr1[i] == 0) {
+			arraysize = i;
+			break;
+		}
+	}
+	for (int i = 0;i < arraysize;i++) {
+		if (count == 7) break;
+		if (arr1[i] == i + 1) {
+			count++;
+			break;
+		}
+	}
+
+	printf("%d", count);
 	
 	return 0;
 }
